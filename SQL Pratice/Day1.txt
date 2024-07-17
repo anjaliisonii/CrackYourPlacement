@@ -1,0 +1,22 @@
+1. Create table Customers1 (
+  C_id int Primary Key,
+  Name varchar(50),
+  email varchar(50)
+);
+ 
+
+2.Create table employess (
+  e_id int Primary Key,
+  Name varchar(50),
+  email varchar(50)
+);
+
+Insert into employess values(121,'Anjali', 'anjali@gmail.com');
+
+3.Create table Product (
+  Product_id int Primary Key,
+  quality int
+);
+Insert into Product values(123,7);
+Delete from Product where quality=10;  Delete from Table where condition
+Update product set quality=10 where quality=5; Update tablename set columnname=val where condition;
