@@ -1,0 +1,20 @@
+#Filtering and sorting Data
+
+1. select * from Customers where age>25;
+2. create Table Products(P_id int Primary key,category varchar ,price numeric);
+
+Insert into Products values(124,'Electronics',7000);
+Insert into Products values(123,'Electronics',2000);
+Insert into Products values(122,'Electronics',1900);
+
+Update Products set category='Electronics' where category='Electronic';
+select * from Products where category='Electronics' and Price>=2000;
+#We can use ORDER BY with WHERE clause, GROUP BY clause, and HAVING clause.The ORDER BY clause in SQL is used to sort the result set of a SELECT statement based on specified columns
+#Syntax
+SELECT * FROM table_name ORDER BY column1 ASC|DESC , column2 ASC|DESC
+3.select first_name from Customers order by first_name;
+ or
+select first_name from Customers order by first_name desc;
+
+4.select count(order_id) from Orders;
+select count(DISTINCT customer_id) from Orders;
