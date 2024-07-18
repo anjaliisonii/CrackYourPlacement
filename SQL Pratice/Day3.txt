@@ -1,0 +1,6 @@
+#Joining Table
+1. select c1.first_name ,o1.order_id from customers c1 join orders o1 on c1.customer_id=o1.customer_id;
+2. select p1.product_name ,c1.category_name,s1.suppliers_name from products p1 join category c1 on p1.p_id=o1.p_id inner join suppliers s1 on s1.sid=o1.sid;
+3. select e1.first_name ,d1.department_name from employee e1 join department d1 on e1.department_id=d1.department_id;
+4. select c1.first_name ,o1.amount from customers c1 join orders o1 on c1.customer_id=o1.customer_id where o1.amount>1000;
+5. select c1.first_name ,sum(o1.amount) from customers c1 join orders o1 on c1.customer_id=o1.customer_id where o1.amount>=400 group by first_name having o1.amount>800 order by first_name desc;
