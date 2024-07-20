@@ -1,0 +1,8 @@
+#Advanced Filtering and sorting
+#tips we are using not qual sign istead of that like is used
+1.select * from customers where first_name like 'J%' and city like '%YORK'
+2.select * from employee where price>1000 or price<500;
+3. select * from employee where date between '2024-02-08' and '2024-02-28';
+4.SELECT *FROM customers WHERE phone_number IS NULL;
+
+

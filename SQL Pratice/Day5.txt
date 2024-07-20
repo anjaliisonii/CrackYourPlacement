@@ -1,0 +1,9 @@
+#Data manipulation
+1.update Customers set country='USA' where age>22;
+2.Delete from customers where age>22;
+3.INSERT INTO employees (employee_name, salary, department_id)
+4.SELECT name, salary, department_id
+FROM temp_employees;
+5.UPDATE Orders
+SET Discount = '5%', Total_Price = Total_Price - (Total_Price * 0.05)
+WHERE ODate < '2024-01-01';

@@ -1,0 +1,51 @@
+# Top 50 questions ask in the interview
+Question 1: find the second highest salry of an employee?
+Insert into employee values(7839,5000);
+
+create table employee(
+    emp_id int Primary key,
+    sal numeric
+)
+
+sol1:select max(sal) from employee where sal not in (select max(sal) from employee);
+sol2: select max(sal) from employee where sal <(select max(sal) from employee);
+
+#Question2: Find the department wise highest salry
+Create table Department (
+  dep_id int primary key,
+  sal numeric,
+  ename varchar(50));
+insert into department values(10,8000,'Anjali')
+select max(sal) ,dep_id from department group  by dep_id;
+
+#Question 3: Display alternate record in SQL
+#odd
+select * from (slect empno,ename,sal rownum rn from employee order by rn)
+where mod (rn,2)<>0;
+#even
+select * from (slect empno,ename,sal rownum rn from employee order by rn)
+where mod (rn,2)=0;
+
+
+#Question 4: Find the duplicated value and frequency in column
+select count(dep_id),ename from department group by dep_id  having count(dep_id)>2;
+slect ename,count(*) from emp group by ename having count(*)>=2;
+
+#Question 5: Patten matching in SQL
+1.Display the employee name whose name ends with M?
+select * from employee where ename like '%m';
+2.Display the employee name whose name  with M in any position in their name?
+select * from employee where ename like '%m%';
+3. Display the employee name whose name does not contain  with M?
+select * from employee where ename Not like '%m%';
+
+Question6 : Display nth row of employee table
+select * from ( select rownum r, ename ,sal from emp) where r=nth;
+select * from ( select rownum r, ename ,sal from emp) where r in (2,3,7);
+
+Question7: Nth highest salry 
+
+# tRICK FOR THAT first we have to find the top salry and then elimanate the other salry
+select * from (select DISTINCT sal from emp order by sal desc) where rownum<=3;
+
+
