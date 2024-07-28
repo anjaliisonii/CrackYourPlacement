@@ -20,6 +20,40 @@ class SmartPhone(Phone):
     pass
 
 FeaturePhone(10000,"Apple","13px").buy()
+
+
+
+class Phone:
+    def __init__(self, price, brand, camera):
+        print ("Inside phone constructor")
+        self.__price = price
+        self.brand = brand
+        self.camera = camera
+
+    def buy(self):
+        print ("Buying a phone")
+
+    def return_phone(self):
+        print ("Returning a phone")
+
+class FeaturePhone(Phone):
+    pass
+#we can use in case we want the parent class behaviour if the both the inherited and inherting class have same behaviour then we can use super class
+class SmartPhone(Phone):
+    def __init__(self, price, brand, camera, os, ram):
+        super().__init__(price, brand, camera)
+        self.os = os
+        self.ram = ram
+        print ("Inside smartphone constructor")
+
+    def buy(self):
+        print ("Buying a smartphone")
+
+s=SmartPhone(20000, "Samsung", 12, "Android", 2)
+
+print(s.os)
+print(s.brand)
+
 '''When we have a inheritance relationship, the attributes and behaviors get inherited,
  just like a child inherits certain attributes and behaviours from its parent. '''
 '''From a code perspective, a child class inherits:
@@ -74,6 +108,7 @@ s=SmartPhone(20000, "Apple", 12)
 
 s.buy()
 s.review()
+#F
 ###Heirarchiral 
 #one parent---many childrens
 class Phone:
@@ -97,7 +132,7 @@ class FeaturePhone(Phone):
 
 SmartPhone(1000,"Apple","13px").buy()
 
-#Multiple level-
+#Multiple -
 #one children---many parents
 class Phone:
     def __init__(self, price, brand, camera):
@@ -113,16 +148,16 @@ class Phone:
         print ("Returning a phone")
 
 class Product:
-    def review(self):
-        print ("Customer review")
+    def buy(self):
+        print ("Product buy method")
 
-class SmartPhone(Phone, Product):
+class SmartPhone(Product, Phone):
     pass
 
 s=SmartPhone(20000, "Apple", 12)
 
 s.buy()
-s.review()
+
 #Contradiction
 '''When a child is inheriting from multiple parents, 
 and if there is a common behavior to be inherited, 
